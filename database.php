@@ -17,9 +17,9 @@
   // output data of each row
     $rooms = [];
     while($row = $result->fetch_assoc()) {
-      $rooms = $row;
+      $rooms[] = $row;
     }
-    var_dump($rooms);
+    // var_dump($rooms);
 
   } elseif ($result) {
   echo "0 results";
@@ -27,5 +27,3 @@
   echo "query error";
   }
   $conn->close();
-
-?>

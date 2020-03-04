@@ -37,7 +37,7 @@
                   <td><?php echo $room['beds'] ?></td>
                   <td><?php echo $room['created_at'] ?></td>
                   <td><?php echo $room['updated_at'] ?></td>
-                  <td><a href="">View</a></td>
+                  <td><a href="show/show.php?id= <?php echo $room['id'];?>">View</a></td>
                   <td><a href="">UPDATE</a></td>
 
                 </tr>
