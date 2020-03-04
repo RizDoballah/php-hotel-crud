@@ -1,5 +1,5 @@
 <?php
-  $servername = "localhost";
+  $servername = "localhost:8889";
   $username = "root";
   $password = "root";
   $dbname = "hotel";
@@ -19,6 +19,7 @@
     while($row = $result->fetch_assoc()) {
       $rooms = $row;
     }
+    var_dump($rooms);
 
   } elseif ($result) {
   echo "0 results";
