@@ -39,6 +39,12 @@
                   <td><?php echo $room['updated_at'] ?></td>
                   <td><a href="show/show.php?id= <?php echo $room['id'];?>">View</a></td>
                   <td><a href="">UPDATE</a></td>
+                  <td>
+                    <form class="delete" action="delete/delete.php" method="post">
+                      <input type="hidden" name="id" value="<?php echo $room['id'];?>">
+                      <input class="btn-danger"type="submit" name="" value="DELETE">
+                    </form>
+                  </td>
 
                 </tr>
             <?php }
