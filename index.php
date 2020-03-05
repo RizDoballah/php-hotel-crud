@@ -1,13 +1,14 @@
-<?php include 'database.php' ?>
+<?php
+ include 'server.php';
+ include 'partials/header.php';
+ ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="dist/app.css">
-    <title>info-hotel</title>
-  </head>
-  <body>
+ <?php if(!empty($_GET['roomId'])) { ?>
+    <div class="alert alert-danger">
+      Hai cancellato la stanza id : <?php echo $_GET['roomId'] ?>
+    </div>
+ <?php } ?>
+
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -38,9 +39,9 @@
                   <td><?php echo $room['created_at'] ?></td>
                   <td><?php echo $room['updated_at'] ?></td>
                   <td><a href="show/show.php?id= <?php echo $room['id'];?>">View</a></td>
-                  <td><a href="">UPDATE</a></td>
+                  <td><a href="update/update.php?id= <?php echo $room['id'];?>">UPDATE</a></td>
                   <td>
-                    <form class="delete" action="delete/delete.php" method="post">
+                    <form class="delete" action="delete/server.php" method="post">
                       <input type="hidden" name="id" value="<?php echo $room['id'];?>">
                       <input class="btn-danger"type="submit" name="" value="DELETE">
                     </form>
@@ -50,16 +51,10 @@
             <?php }
             }
             ?>
-
             </tbody>
-
           </table>
-
         </div>
-
       </div>
-
     </div>
 
-  </body>
-</html>
+    <?php include 'partials/footer.php' ?>

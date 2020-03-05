@@ -1,14 +1,11 @@
-<?php include __DIR__ . '/../database.php';
-
-
-if(empty($_GET['id'])) {
+<?php include 'database.php';
+if(empty($_POST['id'])) {
   die('NO ID');
 }
-  $idRoom = $_GET['id'];
+  $idRoom = $_POST['id'];
 
-  $sql = "SELECT * FROM stanze WHERE `id`= $idRoom";
+  $sql = "UPDATE stanze SET room_number ='400' WHERE `id` = $idRoom";
   $result = $conn->query($sql);
-
   if ($result && $result->num_rows > 0) {
     $room = $result->fetch_assoc();
 

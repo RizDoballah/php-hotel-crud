@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../dist/app.css">
-    <title>info-hotel</title>
-  </head>
-  <body>
+<?php
+  include 'server.php';
+  include __DIR__ . '/../partials/header.php';
+ ?>
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -28,11 +24,10 @@
               <td><?php echo $room['floor']; ?></td>
               <td><?php echo $room['beds']; ?></td>
               <td><?php echo $room['created_at']; ?></td>
-              <td><?php echo $room['updated_at']; ?></td>  
+              <td><?php echo $room['updated_at']; ?></td>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <?php include __DIR__ .'/../partials/footer.php'; ?>
