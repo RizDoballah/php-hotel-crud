@@ -2,23 +2,23 @@
   include_once __DIR__ . '/../env.php';
   include __DIR__ .'/../database.php';
 
-  if (empty($post['id'])) {
+  if (empty($_POST['id'])) {
     die('id non inserito');
   }
-  if (empty($post['room_number'])) {
+  if (empty($_POST['room_number'])) {
     die('numero di stanza non inserito');
   }
-  if (empty($post['floor'])) {
+  if (empty($_POST['floor'])) {
     die('piano di stanza non inserito');
   }
-  if (empty($post['beds'])) {
+  if (empty($_POST['beds'])) {
     die('numero letti non inserito');
   }
 
-  $roomId = $post['id'];
-  $roomNumber = $post['room_number'];
-  $floor = $post['floor'];
-  $beds = $post['beds'];
+  $roomId = $_POST['id'];
+  $roomNumber = $_POST['room_number'];
+  $floor =$_POST['floor'];
+  $beds = $_POST['beds'];
 
   $sql= "SELECT * from `stanze` WHERE `id` = $roomId";
   $result = $conn->query($sql);

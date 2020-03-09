@@ -8,12 +8,13 @@
     <title>info-hotel</title>
   </head>
   <header>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
       <div class="navbar-brand">
       HOTEL BOOLEANA
       </div>
       <ul class="navbar-nav">
-        <li><a href="<?php echo $basePath ?>">All Rooms</a></li>
+        <li><a class="nav-link" href="<?php echo $basePath ?>">All Rooms</a></li>
+        <li><a class="nav-link" href="<?php echo $basePath ?>insert/insert.php">Insert Room</a></li>
       </ul>
     </nav>
   </header>

@@ -37,11 +37,11 @@
            <input type="hidden" name="id" value="<?php echo $room['id']; ?>">
            <input class="form-control" class="btn btn-submit" type="submit" value="Update">
          </div>
-
        </form>
-
      </div>
-
    </div>
-
  </div>
+ 
+ <?php
+include __DIR__ . '/../partials/footer.php'
+?>
