@@ -18,7 +18,6 @@
               </tr>
             </thead>
             <tbody>
-              <?php include 'server.php' ?>
               <td><?php echo $room['id']; ?></td>
               <td><?php echo $room['room_number']; ?></td>
               <td><?php echo $room['floor']; ?></td>

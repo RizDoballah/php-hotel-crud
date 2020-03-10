@@ -1,17 +1,23 @@
 <?php
   include __DIR__ .'/../database.php';
   include __DIR__ .'/../partials/header.php';
+  include __DIR__ . '/../functions.php';
 
   if (!empty($_GET['id'])) {
     $roomId = $_GET['id'];
   }
 
-  $sql= "SELECT * from `stanze` WHERE `id` = $roomId";
-  $result = $conn->query($sql);
+  // $sql= "SELECT * from `stanze` WHERE `id` = $roomId";
+  // $result = $conn->query($sql);
+  //
+  // if ($result && $result->num_rows > 0) {
+  //   $room = $result->fetch_assoc();
+  // } else {
+  //   die('id non esistente');
+  // }
 
-  if ($result && $result->num_rows > 0) {
-    $room = $result->fetch_assoc();
-  } else {
+  $room = getById($conn, 'stanze', $roomId);
+  if (!$room) {
     die('id non esistente');
   }
 
@@ -41,7 +47,7 @@
      </div>
    </div>
  </div>
- 
+
  <?php
 include __DIR__ . '/../partials/footer.php'
 ?>

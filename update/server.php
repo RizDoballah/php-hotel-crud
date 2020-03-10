@@ -1,6 +1,7 @@
 <?php
   include_once __DIR__ . '/../env.php';
   include __DIR__ .'/../database.php';
+  include __DIR__ . '/../functions.php';
 
   if (empty($_POST['id'])) {
     die('id non inserito');
@@ -20,12 +21,23 @@
   $floor =$_POST['floor'];
   $beds = $_POST['beds'];
 
-  $sql= "SELECT * from `stanze` WHERE `id` = $roomId";
-  $result = $conn->query($sql);
+  foreach ($_POST as $key => $value) {
+    if (intval($value) == 0) {
+      die("$key non e un numero");
+    }
+  }
 
-  if ($result && $result->num_rows > 0) {
-    $room = $result->fetch_assoc();
-  } else {
+  // $sql= "SELECT * from `stanze` WHERE `id` = $roomId";
+  // $result = $conn->query($sql);
+  //
+  // if ($result && $result->num_rows > 0) {
+  //   $room = $result->fetch_assoc();
+  // } else {
+  //   die('id non esistente');
+  // }
+
+  $room = getById($conn, 'stanze', $roomId);
+  if (!$room) {
     die('id non esistente');
   }
 
