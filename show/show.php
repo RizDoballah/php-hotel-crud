@@ -13,8 +13,8 @@
                 <th>ROOM_NUMBER</th>
                 <th>FLOOR</th>
                 <th>BEDS</th>
-                <th>CREATED_AT</th>
-                <th>UPDATED_AT</th>
+                <th>CREATED</th>
+                <th>UPDATED</th>
               </tr>
             </thead>
             <tbody>
